@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship
 from datetime import datetime
 
-engine = create_engine("postgresql://postgres:Ibr0him$!@db.hcyiadrfsyulxhuodcrk.supabase.co:5432/postgres")
+engine = create_engine("postgresql://postgres.hcyiadrfsyulxhuodcrk:Ibr0him$!@aws-1-ap-southeast-2.pooler.supabase.com:5432/postgres")
 Base = declarative_base()
 SessionLocal = sessionmaker(bind=engine)
 
@@ -87,7 +87,7 @@ class AttemptAnswer(Base):
     selected_option = relationship("Option")
 
 
-Base.metadata.create_all(bind=engine)
+# Base.metadata.create_all(bind=engine)
 
 def get_db():
     db = SessionLocal()
